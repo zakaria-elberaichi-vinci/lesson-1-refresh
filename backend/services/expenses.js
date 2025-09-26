@@ -9,13 +9,7 @@ function getAllExpenses() {
 }
 
 function addExpense(expense) {
-  return prisma.expense.create({
-    data: expense,
-  });
-
-  const updatedExpenses = JSON.stringify(expenses, null, 2);
-  fs.writeFileSync(EXPENSES_FILE_PATH, updatedExpenses);
-  return expense;
+ return prisma.expense.create({ data: expense });
 }
 
 function resetExpenses() {
